@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>선불 결제 안심 보증 안내 | 청암홈윈도우</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0c2340;
+    --navy-mid: #163759;
+    --navy-light: #1e4d7a;
+    --gold: #b8852a;
+    --gold-light: #d4a44c;
+    --gold-pale: #f5e8cc;
+    --white: #ffffff;
+    --off-white: #f8f6f2;
+    --gray-light: #eceae4;
+    --gray-mid: #9a9485;
+    --text-dark: #1a1612;
+    --text-mid: #3d3830;
+    --text-muted: #6b6357;
+    --green: #1a6b3a;
+    --green-light: #e8f5ee;
+    --red-light: #fdf0ed;
+    --red: #c13b20;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  header {
+    background: var(--navy);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .header-logo span {
+    color: var(--gold-light);
+  }
+  .header-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gold-light);
+    border: 1px solid rgba(212,164,76,0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+    padding: 72px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(184,133,42,0.07);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero-inner {
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold-light);
+    opacity: 0.6;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 300;
+    max-width: 560px;
+    line-height: 1.8;
+  }
+  .hero-guarantee-strip {
+    margin-top: 48px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .guarantee-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(212,164,76,0.3);
+    border-radius: 40px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.88);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .guarantee-pill .icon {
+    width: 18px; height: 18px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--navy);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── MAIN CONTENT ──────────────────────────── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-pale);
+    max-width: 40px;
+  }
+
+  .section h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ── CONCERN BOX ────────────────────────────── */
+  .concern-box {
+    background: var(--red-light);
+    border-left: 3px solid var(--red);
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .concern-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .concern-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+  .concern-text p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ── FLOW STEPS ─────────────────────────────── */
+  .flow-container {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr 40px 1fr;
+    gap: 0;
+    align-items: start;
+    margin-bottom: 32px;
+  }
+  .flow-step {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    padding: 28px 22px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step.highlight {
+    border-color: var(--gold);
+    background: linear-gradient(145deg, #fffdf7 0%, var(--gold-pale) 100%);
+    box-shadow: 0 4px 24px rgba(184,133,42,0.12);
+  }
+  .flow-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .flow-step.highlight .flow-num {
+    background: var(--gold);
+  }
+  .flow-step-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .flow-step h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .flow-step p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .flow-arrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 70px;
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  /* ── PROTECTION NOTE ──────────────────────── */
+  .protection-note {
+    background: var(--green-light);
+    border: 1px solid rgba(26,107,58,0.2);
+    border-radius: 12px;
+    padding: 18px 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 8px;
+  }
+  .protection-note .note-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .protection-note p {
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+  .protection-note p strong {
+    font-weight: 700;
+  }
+
+  /* ── CERTIFICATE CARDS ──────────────────────── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .cert-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    padding: 26px 24px;
+  }
+  .cert-card.primary {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+  }
+  .cert-card-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .cert-card.primary .cert-card-tag {
+    color: var(--gold-light);
+  }
+  .cert-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .cert-card.primary h3 {
+    color: var(--white);
+  }
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 13px;
+  }
+  .cert-card.primary .cert-row {
+    border-bottom-color: rgba(255,255,255,0.1);
+  }
+  .cert-row:last-child { border-bottom: none; }
+  .cert-row .label {
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .cert-card.primary .cert-row .label {
+    color: rgba(255,255,255,0.55);
+  }
+  .cert-row .value {
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .cert-card.primary .cert-row .value {
+    color: var(--gold-light);
+  }
+
+  /* ── WHAT IS SECTION ─────────────────────────── */
+  .what-is-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .what-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    padding: 22px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .what-card-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .what-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .what-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ── SGI BADGE ───────────────────────────────── */
+  .sgi-block {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 32px 36px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .sgi-logo-area {
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .sgi-logo-box {
+    background: var(--gold);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    font-family: 'Noto Serif KR', serif;
+    margin-bottom: 6px;
+  }
+  .sgi-sub {
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+  }
+  .sgi-text h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .sgi-text p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+  }
+  .sgi-text p strong {
+    color: var(--gold-light);
+  }
+
+  /* ── FAQ ─────────────────────────────────────── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .faq-q span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .faq-q span::before {
+    content: 'Q';
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--gold);
+    border-radius: 4px;
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-chevron {
+    font-size: 16px;
+    color: var(--gold);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+  }
+  .faq-a {
+    display: none;
+    padding: 0 24px 20px 54px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.85;
+    border-top: 1px solid var(--gray-light);
+  }
+  .faq-item.open .faq-a {
+    display: block;
+    padding-top: 16px;
+  }
+  .faq-a strong { color: var(--navy); }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    padding: 36px 48px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+  }
+  footer strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  /* ── DIVIDER ─────────────────────────────────── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-light);
+    margin: 0 0 48px;
+  }
+
+  /* Highlight text */
+  .hl { color: var(--gold); font-weight: 700; }
+  .hl-navy { color: var(--navy); font-weight: 700; }
+
+  @media print {
+    body { font-size: 13px; }
+    .hero { padding: 48px 48px 56px; }
+    .hero h1 { font-size: 32px; }
+    main { padding: 40px 32px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo">
+    주식회사 <span>청암홈윈도우</span>
+  </div>
+  <div class="header-badge">고객 신뢰 안심 자료</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">선불 결제 안심 보증</div>
+    <h1>계약금이 걱정되신다면,<br><em>보증보험이 지켜드립니다.</em></h1>
+    <p class="hero-sub">
+      청암홈윈도우는 고객님께서 납부하신 계약금 전액에 대해 국가 인가 보증보험 기관의 보증증권을 발행합니다.
+      시공이 이루어지지 않는 어떠한 경우에도 납부하신 금액은 100% 보호됩니다.
+    </p>
+    <div class="hero-guarantee-strip">
+      <div class="guarantee-pill">
+        <div class="icon">✓</div>
+        계약금 100% 보호
+      </div>
+      <div class="guarantee-pill">
+        <div class="icon">✓</div>
+        국가 인가 기관 발행
+      </div>
+      <div class="guarantee-pill">
+        <div class="icon">✓</div>
+        업력 30년 신뢰
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- SECTION 1: 고객 우려 인식 -->
+  <section class="section">
+    <div class="section-label">고객 우려 사항</div>
+    <h2>선불 결제, 이런 걱정이 드시나요?</h2>
+    <p class="section-desc">
+      창호 교체는 제작 후 시공이 이루어지는 특성상 계약금(선불) 납부가 필요합니다.
+      많은 고객님들이 이에 대한 불안감을 표현하십니다.
+    </p>
+
+    <div class="concern-box">
+      <div class="concern-icon">🔴</div>
+      <div class="concern-text">
+        <strong>고객이 자주 묻는 우려</strong>
+        <p>"제작이 시작된다고 하는데, 돈을 먼저 내고 나중에 문제가 생기면 어떻게 하나요?"<br>
+        "시공 전에 돈을 다 내면 업체가 사라지거나 문제가 생겼을 때 돌려받을 수 있나요?"</p>
+      </div>
+    </div>
+
+    <div class="protection-note">
+      <div class="note-icon">🛡️</div>
+      <p>
+        <strong>청암홈윈도우의 답변:</strong>
+        고객님의 우려는 당연합니다. 그래서 저희는 계약 즉시 <strong>SGI서울보증보험의 선금보증증권</strong>을 발행하여 제공합니다.
+        만일의 경우 보험사가 직접 계약금 전액을 환급해 드립니다.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION 2: 보증보험이란 -->
+  <section class="section">
+    <div class="section-label">보증보험 소개</div>
+    <h2>선금보증보험이란 무엇인가요?</h2>
+    <p class="section-desc">
+      정부가 인가한 보증보험 기관이 발행하는 공식 증권입니다. 시공사의 계약 미이행 시, 보험사가 고객에게 직접 보상합니다.
+    </p>
+
+    <div class="sgi-block">
+      <div class="sgi-logo-area">
+        <div class="sgi-logo-box">SGI</div>
+        <div class="sgi-sub">서울보증보험</div>
+      </div>
+      <div class="sgi-text">
+        <h3>SGI 서울보증보험</h3>
+        <p>
+          금융위원회 인가를 받은 <strong>국내 최대 보증보험 기관</strong>입니다.
+          정부 공신력 기반의 공식 기관으로, 청암홈윈도우의 선금보증증권을
+          발행·관리합니다. 은행 보증과 동일한 법적 효력을 지닙니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="what-is-grid">
+      <div class="what-card">
+        <div class="what-card-num">1</div>
+        <div>
+          <h4>누가 발행하나요?</h4>
+          <p>SGI 서울보증보험(국가 인가 금융기관)이 발행합니다. 민간 업체가 아닌 공신력 있는 보증기관입니다.</p>
+        </div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-num">2</div>
+        <div>
+          <h4>누가 피보험자인가요?</h4>
+          <p>증권에 <strong>고객님(계약자)</strong>이 피보험자로 명시됩니다. 문제 발생 시 보험사가 고객님께 직접 지급합니다.</p>
+        </div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-num">3</div>
+        <div>
+          <h4>어떤 상황에서 보호받나요?</h4>
+          <p>시공 지연, 계약 불이행, 부도·폐업 등 계약이 이행되지 않는 모든 상황에서 보상받을 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-num">4</div>
+        <div>
+          <h4>얼마나 보호받나요?</h4>
+          <p>납부하신 계약금(선금) 전액이 보증 대상입니다. 원금 전체를 보장받을 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION 3: 보호 절차 흐름도 -->
+  <section class="section">
+    <div class="section-label">보증 절차</div>
+    <h2>어떻게 보호받는 건가요?</h2>
+    <p class="section-desc">계약부터 시공 완료까지, 고객님의 계약금은 다음과 같이 보호됩니다.</p>
+
+    <div class="flow-container">
+      <!-- Step 1 -->
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <span class="flow-step-icon">📝</span>
+        <h3>계약 체결 및<br>계약금 납부</h3>
+        <p>청암홈윈도우와 창호 교체 계약을 체결하고 계약금(선금)을 납부합니다.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <!-- Step 2 (Highlight) -->
+      <div class="flow-step highlight">
+        <div class="flow-num">2</div>
+        <span class="flow-step-icon">📄</span>
+        <h3>보증증권<br>즉시 발행</h3>
+        <p>청암홈윈도우가 SGI 서울보증보험에서 <strong>고객 명의의 보증증권</strong>을 발행하여 제공합니다.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <!-- Step 3 -->
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <span class="flow-step-icon">🏠</span>
+        <h3>시공 완료 &<br>안심 마무리</h3>
+        <p>계약대로 시공이 완료됩니다. 만약 계약 미이행 시, 보험사가 계약금 전액을 환급합니다.</p>
+      </div>
+    </div>
+
+    <div class="protection-note">
+      <div class="note-icon">💡</div>
+      <p>
+        보증증권은 계약 후 <strong>영업일 기준 1~2일 이내</strong> 발급되며, 보증서 사본을 고객님께 직접 제공해 드립니다.
+        궁금하신 점은 언제든지 담당 직원에게 문의 주세요.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION 4: 증권 내용 -->
+  <section class="section">
+    <div class="section-label">증권 주요 내용</div>
+    <h2>보증증권에는 무엇이 기재되나요?</h2>
+    <p class="section-desc">청암홈윈도우는 포괄 선금보증 약정서 체계 하에 건별 보증확인서를 발급합니다.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card primary">
+        <div class="cert-card-tag">포괄 선금보증 약정서</div>
+        <h3>청암홈윈도우<br>포괄 보증 계약</h3>
+        <div class="cert-row">
+          <span class="label">보증 기관</span>
+          <span class="value">SGI 서울보증보험</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">보증 주체</span>
+          <span class="value">주식회사 청암홈윈도우</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">효력</span>
+          <span class="value">법적 구속력 있음</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">운영 방식</span>
+          <span class="value">건별 확인서 발급</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-tag">건별 선금보증 확인서</div>
+        <h3>고객별 개별<br>보증 확인서</h3>
+        <div class="cert-row">
+          <span class="label">피보험자</span>
+          <span class="value">고객님 (계약자)</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">보증 금액</span>
+          <span class="value">납부 계약금 전액</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">보증 기간</span>
+          <span class="value">계약일 ~ 시공 완료일</span>
+        </div>
+        <div class="cert-row">
+          <span class="label">주요 내용</span>
+          <span class="value">계약 불이행 시 환급</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION 5: FAQ -->
+  <section class="section">
+    <div class="section-label">자주 묻는 질문</div>
+    <h2>고객님이 자주 물어보시는 것들</h2>
+    <p class="section-desc">선불 결제와 보증보험에 관해 현장에서 자주 나오는 질문을 정리했습니다.</p>
+
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span>보증증권을 직접 받을 수 있나요?</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">
+          네, 가능합니다. 계약 체결 후 발급된 <strong>건별 선금보증 확인서</strong>를 고객님께 직접 제공해 드립니다. 서류를 직접 확인하시고 보관하실 수 있습니다. 요청 시 원본 사본을 이메일 또는 우편으로도 발송해 드립니다.
+        </div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span>시공 중간에 업체에 문제가 생기면 어떻게 되나요?</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">
+          계약 미이행이 확인되는 경우, 고객님은 보증 기관인 <strong>SGI 서울보증보험에 직접 보상을 청구</strong>할 수 있습니다. 청암홈윈도우가 아닌 보험사가 고객님께 직접 계약금 전액을 지급하므로, 업체의 상황과 무관하게 보호받으실 수 있습니다.
+        </div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span>인테리어 업체(B2B)도 동일하게 적용되나요?</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">
+          네, B2B 거래도 동일하게 선금보증 체계가 적용됩니다. 인테리어 업체를 피보험자로 하는 <strong>건별 선금보증 확인서</strong>를 발행하며, 거래 금액 및 보증 기간은 계약 조건에 따라 협의합니다.
+        </div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span>모든 공사 건에 보증증권이 발급되나요?</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">
+          계약금(선불금)이 발생하는 모든 거래에 대해 보증을 제공합니다. 소규모 단건 공사의 경우 담당 직원과 상담 후 진행하며, 발급 조건은 계약 금액 및 내용에 따라 일부 차이가 있을 수 있습니다. 담당자에게 문의 주시면 상세히 안내해 드립니다.
+        </div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span>시공이 완료된 후에도 증권이 유효한가요?</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">
+          보증증권의 유효 기간은 <strong>계약일부터 시공 완료일까지</strong>입니다. 시공이 성공적으로 완료되면 보증 기간이 자연 만료됩니다. 시공 후 제품 하자에 대한 보증은 별도의 제조사 품질보증서(A/S 보증서)로 처리됩니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong>주식회사 청암홈윈도우</strong> &nbsp;|&nbsp;
+    창호 전문 30년 &nbsp;|&nbsp;
+    대전 본사 · 전국 지점 운영
+  </p>
+  <p style="margin-top: 8px;">
+    이 자료는 고객 상담용 안심 안내 문서입니다. 보증 조건은 계약 내용에 따라 상이할 수 있습니다.
+  </p>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
